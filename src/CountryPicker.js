@@ -35,7 +35,7 @@ let styles = {};
 // but for now just ios
 // const isEmojiable = Platform.OS === 'ios' ||
 // (Platform.OS === 'android' && Platform.Version >= 21);
-const isEmojiable = false ;//Platform.OS === 'ios';
+const isEmojiable = Platform.OS === 'ios';
 
 if (isEmojiable) {
   countries = require('../data/countries-emoji');
@@ -285,7 +285,7 @@ export default class CountryPicker extends Component {
               this.props.children
             :
               (<View style={styles.touchFlag}>
-                {CountryPicker.renderFlag(this.props.cca2)}
+                {this.getCountryName(this.props.cca2)}
               </View>)
           }
         </TouchableOpacity>
