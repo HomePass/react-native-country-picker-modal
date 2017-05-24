@@ -285,7 +285,7 @@ export default class CountryPicker extends Component {
               this.props.children
             :
               (<View style={styles.touchFlag}>
-                {this.getCountryName(countries[this.props.cca2])}
+                <Text>{this.getCountryName(countries[this.props.cca2])}</Text>
               </View>)
           }
         </TouchableOpacity>
